@@ -21,7 +21,7 @@ import ForkMe from './ForkMe';
 // we could also move this to a separate file & import it if desired.
 let config = {};
 config.params = {
-  center: [50.4294, 30.5132],
+  //center: [50.4294, 30.5132],
   zoomControl: false,
   zoom: 12,
   maxZoom: 18,
