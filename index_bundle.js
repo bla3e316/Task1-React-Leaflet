@@ -21935,7 +21935,7 @@ var Map = function (_Component) {
         }
 
         // assemble the HTML for the markers' popups (Leaflet's bindPopup method doesn't accept React JSX)
-        var popupContent = '<h3>' + feature.properties.NAME + '</h3>\n        <strong>Subway lines: </strong>' + feature.properties.LINE;
+        var popupContent = '<h3>' + feature.properties.NAME + '</h3>\n        <strong>It\'s: </strong>' + feature.properties.LINE;
 
         // add our popups
         layer.bindPopup(popupContent);
