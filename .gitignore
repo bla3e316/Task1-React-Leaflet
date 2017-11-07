@@ -1,5 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
 /node_modules/
-/.gitignore
+/.DS_Store
 /.gitattributes
 /.idea/
