@@ -28,11 +28,6 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader','css-loader']
       },
-      // {
-      //   test: /\.(png|jpg|gif)$/,
-      //   loader:'file-loader',
-      //   options: {}
-      // },
       {
         test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
         loader:'url-loader',
