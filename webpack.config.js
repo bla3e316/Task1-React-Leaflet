@@ -18,32 +18,25 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-          }
+        use: ['babel-loader']
       },
       {
         test: /\.json$/,
-        exclude: /node_modules/,
-        use: 'json-loader'
+        use: ['json-loader']
       },
       {
         test: /\.css$/,
-        exclude: /node_modules/,
-        use: [
-          {loader:'style-loader'},
-          {loader:'css-loader'}
-        ]
+        use: ['style-loader','css-loader']
       },
+      // {
+      //   test: /\.(png|jpg|gif)$/,
+      //   loader:'file-loader',
+      //   options: {}
+      // },
       {
-        test: /\.(png|jpg|gif)$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader:'file-loader',
-            options: {}
-        }
-        ]
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        loader:'url-loader',
+        options: { limit: 10000 }
       }
     ]
   },

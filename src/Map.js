@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import L from 'leaflet';
+//import {TileLayer,LayersControl, ScaleControl, Marker, Popup} from 'react-leaflet';
 // postCSS import of Leaflet's CSS
-//import 'css-loader!./leaflet.css';
+import 'leaflet/dist/leaflet.css';
 // using webpack json loader we can import our geojson file like this
 import geojson from 'json-loader!./bk_subway_entrances.geojson';
 // import local components Filter and ForkMe
 import Filter from './Filter';
 import ForkMe from './ForkMe';
+
+// delete L.Icon.Default.prototype._getIconUrl;
+//
+// L.Icon.Default.mergeOptions({
+//   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+//   iconUrl: require('leaflet/dist/images/marker-icon.png'),
+//   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+// })
 
 // store the map configuration properties in an object,
 // we could also move this to a separate file & import it if desired.
