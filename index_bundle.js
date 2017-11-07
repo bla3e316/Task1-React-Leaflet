@@ -21901,7 +21901,7 @@ var Map = function (_Component) {
       // renders our GeoJSON points as circle markers, rather than Leaflet's default image markers
       // parameters to style the GeoJSON markers
       var markerParams = {
-        radius: 4,
+        radius: 5,
         fillColor: 'red',
         color: '#fff',
         weight: 1,
