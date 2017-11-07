@@ -35,7 +35,7 @@ config.tileLayer = {
   uri: 'http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
   params: {
     minZoom: 11,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     id: '',
     accessToken: ''
   }
