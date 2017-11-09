@@ -11,8 +11,8 @@ export default (props) => {
   return (
     <div className="filterSubwayLines">
       <hr/>
-      <h3>Kiev Subway Entrances</h3>
-      <p>Filter Entrances by Subway Line</p>
+      <h3>Kiev Subway</h3>
+      <p>Subway Line</p>
       <select defaultValue="*"
         type="select"
         name="filterlines"
