@@ -12,7 +12,7 @@ export default (props) => {
     <div className="filterSubwayLines">
       <hr/>
       <h3>Kiev Subway</h3>
-      <p>Subway Line</p>
+      <p><h4>Subway Line</h4></p>
       <select defaultValue="*"
         type="select"
         name="filterlines"
