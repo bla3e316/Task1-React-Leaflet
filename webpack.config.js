@@ -15,8 +15,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(''),
-    filename: 'index_bundle.js',
-    sourceMapFilename: 'bundle.map'
+    filename: 'index_bundle.min.js'
   },
   devtool: '#eval',
   module: {
@@ -48,16 +47,16 @@ module.exports = {
     ]
   },
   plugins: [
-    HtmlWebpackPluginConfig,
+    HtmlWebpackPluginConfig
     //new BundleAnalyzerPlugin()
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"production"'
-    }),
-    new UglifyJSPlugin({
-      test: /\.js($|\?)/i
-    }),
-    new compressionPlugin({
-      test: /\.js/
-    })
+    // new webpack.DefinePlugin({
+    //   'process.env.NODE_ENV': '"production"'
+    // }),
+    // new UglifyJSPlugin({
+    //   test: /\.js($|\?)/i
+    // }),
+    // new compressionPlugin({
+    //   test: /\.js/
+    // })
   ]
 }
