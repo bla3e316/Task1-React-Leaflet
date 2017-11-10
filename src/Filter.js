@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Form, FormControl, Button } from 'react-bootstrap';
 // the UI component for filtering the subway entrances by subway line
 export default (props) => {
   const { lines, filterLines } = props;
@@ -12,7 +12,7 @@ export default (props) => {
     <div className="filterSubwayLines">
       <hr/>
       <h3>Kiev Subway</h3>
-      <p><h4>Subway Line</h4></p>
+      <h4>Subway Line</h4>
       <select defaultValue="*"
         type="select"
         name="filterlines"
