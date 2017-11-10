@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --hot --open",
-    "build": "webpack"
+    "build": "webpack -p --progress",
+    "mini": "webpack --optimize-minimize"
   },
   "author": "",
   "license": "ISC",
@@ -31,6 +32,8 @@
     "file-loader": "^1.1.5",
     "jake": "^8.0.15",
     "json-loader": "^0.5.7",
+    "node-sass": "^4.6.0",
+    "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "uglifyjs-webpack-plugin": "^1.0.1",
     "url-loader": "^0.6.2",
