@@ -1,5 +1,6 @@
+var webpack = require("webpack");
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const path = require('path');
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './src/index.html',
@@ -11,15 +12,18 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(''),
-    filename: 'index_bundle.js'
+    filename: 'index_bundle.js',
+    sourceMapFilename: 'bundle.map'
   },
+  devtool: '#eval',
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader:'babel-loader',
-        options:{presets:["env", "react"]}
+        loader: 'babel-loader',
+        options: {
+          presets: ["env", "react"]}
       },
       {
         test: /\.json$/,
@@ -36,5 +40,11 @@ module.exports = {
       }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [
+    HtmlWebpackPluginConfig,
+    //new BundleAnalyzerPlugin()
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': '"production"'
+    })
+  ]
 }
