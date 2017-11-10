@@ -1,5 +1,7 @@
 var webpack = require("webpack");
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+const compressionPlugin = require("compression-webpack-plugin");
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -45,6 +47,9 @@ module.exports = {
     //new BundleAnalyzerPlugin()
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
+    }),
+    new compressionPlugin({
+      test: /\.js/
     })
   ]
 }
