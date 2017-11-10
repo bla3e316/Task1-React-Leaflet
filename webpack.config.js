@@ -1,6 +1,7 @@
 var webpack = require("webpack");
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const compressionPlugin = require("compression-webpack-plugin");
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -32,8 +33,12 @@ module.exports = {
         use: ['json-loader']
       },
       {
-        test: /\.css$/,
-        use: ['style-loader','css-loader']
+        test: /\.(css|scss)$/,
+        use: [
+          {loader: 'style-loader'},
+          {loader: 'css-loader'},
+          {loader: 'sass-loader'}
+        ]
       },
       {
         test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
@@ -47,6 +52,9 @@ module.exports = {
     //new BundleAnalyzerPlugin()
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
+    }),
+    new UglifyJSPlugin({
+      test: /\.js($|\?)/i
     }),
     new compressionPlugin({
       test: /\.js/
